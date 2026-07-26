@@ -7,21 +7,24 @@ const friends = [
     nameZh: '罗锐',
     href: 'https://github.com/Leasier',
     image: '/images/friends/rui-luo.jpg',
-    label: 'github.com/Leasier'
+    description: 'Peking University',
+    descriptionZh: '北京大学'
   },
   {
     name: 'Chenxu Bai',
     nameZh: '白晨旭',
     href: 'https://a1henu.github.io/',
     image: '/images/friends/chenxu-bai.jpg',
-    label: 'a1henu.github.io'
+    description: 'Computer Science undergraduate at Peking University',
+    descriptionZh: '北京大学计算机科学本科生'
   },
   {
     name: 'Gan Luo',
     nameZh: '罗淦',
     href: 'https://luoxiaogan.github.io/GanLuo.github.io/',
     image: '/images/friends/gan-luo.jpg',
-    label: 'luoxiaogan.github.io'
+    description: 'Incoming PhD student at Stanford MS&E',
+    descriptionZh: '斯坦福大学管理科学与工程系准博士生'
   }
 ];
 ---
@@ -32,7 +35,7 @@ const friends = [
       <a href="/" class="nav-logo" aria-label="Back to homepage">Cheerly</a>
       <ul class="nav-links">
         <li><a href="/"><span class="lang-en">Home</span><span class="lang-zh">主页</span></a></li>
-        <li><a href="/blog/"><span class="lang-en">Blog</span><span class="lang-zh">动态</span></a></li>
+        <li><a href="/blog/"><span class="lang-en">Updates</span><span class="lang-zh">动态</span></a></li>
         <li><a href="/friends/"><span class="lang-en">Friends</span><span class="lang-zh">友链</span></a></li>
         <li><a href="/cv/Jiaqi_Li_CV.pdf" target="_blank" rel="noopener">CV</a></li>
       </ul>
@@ -63,7 +66,7 @@ const friends = [
           />
           <div class="friend-card-body">
             <h2><span class="lang-en">{friend.name}</span><span class="lang-zh">{friend.nameZh}</span></h2>
-            <p>{friend.label}</p>
+            <p><span class="lang-en">{friend.description}</span><span class="lang-zh">{friend.descriptionZh}</span></p>
             <span class="friend-arrow" aria-hidden="true">↗</span>
           </div>
         </a>

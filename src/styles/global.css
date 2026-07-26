@@ -744,6 +744,73 @@ html[data-theme="dark"] .seeking-note {
   margin-top: 22px;
 }
 
+.updates-page {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: 52px 28px 88px;
+}
+
+.updates-header {
+  margin-bottom: 34px;
+}
+
+.updates-header h1 {
+  color: var(--text-primary);
+  font-family: 'Lato', 'Noto Sans SC', sans-serif;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.updates-feed {
+  border-top: 1px solid var(--border);
+}
+
+.update-item {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 28px;
+  padding: 27px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.update-item time {
+  padding-top: 4px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.update-label {
+  margin-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.update-content h2 {
+  margin-bottom: 6px;
+  font-family: 'Lato', 'Noto Sans SC', sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.update-content h2 a {
+  color: var(--text-primary);
+  text-decoration-color: color-mix(in srgb, var(--accent), transparent 45%);
+}
+
+.update-content h2 a:hover {
+  color: var(--accent);
+}
+
+.update-content > p:last-child {
+  max-width: 720px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .comments-section {
   margin-top: 28px;
   padding-top: 28px;
@@ -797,7 +864,7 @@ html[data-theme="dark"] .seeking-note {
 .friend-card {
   position: relative;
   overflow: hidden;
-  min-height: 224px;
+  min-height: 232px;
   padding: 24px 16px 18px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -936,6 +1003,16 @@ html[data-theme="dark"] .seeking-note {
     padding: 38px 20px 68px;
   }
 
+  .updates-page {
+    padding: 38px 20px 68px;
+  }
+
+  .update-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 23px 0;
+  }
+
   .friends-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -979,6 +1056,7 @@ html[data-theme="dark"] .seeking-note {
   .nav-inner,
   .academic-shell,
   .note-page,
+  .updates-page,
   .friends-page {
     padding-left: 16px;
     padding-right: 16px;

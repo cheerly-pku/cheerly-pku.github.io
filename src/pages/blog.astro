@@ -2,41 +2,44 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Comments from '../components/Comments.astro';
 
-const feedItems = [
+const updates = [
   {
+    date: '2026-07-02',
+    title: 'ABACUS PPCG Solver Pull Request',
+    titleZh: 'ABACUS PPCG 求解器 Pull Request',
+    href: 'https://github.com/deepmodeling/abacus-develop/pull/7580',
+    description: 'Opened a pull request implementing a PPCG solver for plane-wave diagonalization in ABACUS.',
+    descriptionZh: '向 ABACUS 提交 PPCG 平面波对角化求解器的实现，目前仍在持续评审与完善。',
+    label: 'Pull Request #7580'
+  },
+  {
+    date: '2026-06-23',
     title: 'Linear Algebra Practice',
-    titleZh: '线性代数练习',
+    titleZh: '线性代数练习平台',
     href: '/linear-algebra-practice/',
-    date: '2026',
-    description: 'Course-oriented practice materials, refined sources, and problem review.',
-    descriptionZh: '课程练习、精校资料与题目回顾，作为学习过程中的整理入口。'
+    description: 'A course-oriented collection of refined source materials, exercises, and problem review.',
+    descriptionZh: '面向课程复习整理的资料、练习与题目回顾。',
+    label: 'Course Website'
   },
   {
+    date: '2026-06-09',
     title: 'Parallel Practice',
-    titleZh: '并行程序设计练习',
+    titleZh: '并行程序设计练习平台',
     href: '/parallel-practice/',
-    date: '2026',
-    description: 'Parallel programming review materials, cheat sheets, and final exam notes.',
-    descriptionZh: '并行程序设计复习材料、速查手册与期末备考笔记。'
-  },
-  {
-    title: 'Personal Academic Site',
-    titleZh: '个人学术主页仓库',
-    href: 'https://github.com/cheerly-pku/cheerly-pku.github.io',
-    date: '2026',
-    description: 'The source repository for this Astro-powered academic homepage.',
-    descriptionZh: '这个 Astro 学术主页的源代码仓库与持续迭代记录。'
+    description: 'Review materials and quick references for MPI, OpenMP, GPU programming, and CUDA.',
+    descriptionZh: '整理 MPI、OpenMP、GPU 编程与 CUDA 的复习资料和速查内容。',
+    label: 'Course Website'
   }
 ];
 ---
 
-<BaseLayout title="Blog - Jiaqi Li" description="Jiaqi Li 的个人动态与学习材料入口。">
-  <nav class="nav" aria-label="Blog navigation">
+<BaseLayout title="Updates - Jiaqi Li" description="Recent academic and study updates from Jiaqi Li.">
+  <nav class="nav" aria-label="Updates navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="Back to homepage">Cheerly</a>
       <ul class="nav-links">
         <li><a href="/"><span class="lang-en">Home</span><span class="lang-zh">主页</span></a></li>
-        <li><a href="/blog/"><span class="lang-en">Blog</span><span class="lang-zh">动态</span></a></li>
+        <li><a href="/blog/"><span class="lang-en">Updates</span><span class="lang-zh">动态</span></a></li>
         <li><a href="/friends/"><span class="lang-en">Friends</span><span class="lang-zh">友链</span></a></li>
         <li><a href="/cv/Jiaqi_Li_CV.pdf" target="_blank" rel="noopener">CV</a></li>
       </ul>
@@ -49,29 +52,27 @@ const feedItems = [
     </div>
   </nav>
 
-  <main class="note-page">
-    <section class="note-article">
-      <p class="eyebrow">
-        <span class="lang-en">Personal Blog</span>
-        <span class="lang-zh">个人动态</span>
-      </p>
-      <h1><span class="lang-en">Personal Blog</span><span class="lang-zh">个人动态</span></h1>
-      <p class="note-description">
-        <span class="lang-en">Small updates and study entrances, kept separate from the formal homepage.</span>
-        <span class="lang-zh">一些小更新和学习材料入口，和正式主页正文分开放。</span>
-      </p>
-      <div class="note-list standalone">
-        {feedItems.map((item) => (
-          <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
-            <span><span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span></span>
-            <small>
-              <span class="lang-en">{item.description} · {item.date}</span>
-              <span class="lang-zh">{item.descriptionZh} · {item.date}</span>
-            </small>
-          </a>
-        ))}
-      </div>
+  <main class="updates-page">
+    <header class="updates-header">
+      <p class="eyebrow"><span class="lang-en">Latest</span><span class="lang-zh">近期记录</span></p>
+      <h1><span class="lang-en">Updates</span><span class="lang-zh">动态</span></h1>
+    </header>
+
+    <section class="updates-feed" aria-label="Recent updates">
+      {updates.map((item) => (
+        <article class="update-item">
+          <time datetime={item.date}>{item.date}</time>
+          <div class="update-content">
+            <p class="update-label">{item.label}</p>
+            <h2><a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+              <span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span>
+            </a></h2>
+            <p><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
+          </div>
+        </article>
+      ))}
     </section>
+
     <Comments />
   </main>
 </BaseLayout>
