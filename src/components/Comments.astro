@@ -1,0 +1,53 @@
+<section class="comments-section" aria-labelledby="comments-title">
+  <header class="comments-header">
+    <p class="eyebrow"><span class="lang-en">Discussion</span><span class="lang-zh">交流</span></p>
+    <h2 id="comments-title"><span class="lang-en">Comments</span><span class="lang-zh">留言</span></h2>
+  </header>
+
+  <div class="giscus-host" data-giscus-host></div>
+
+  <script is:inline>
+    (() => {
+      const host = document.querySelector('[data-giscus-host]');
+      if (!host) return;
+
+      const getTheme = () => document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+      const getLanguage = () => document.documentElement.dataset.lang === 'zh' ? 'zh-CN' : 'en';
+
+      const script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.dataset.repo = 'cheerly-pku/cheerly-pku.github.io';
+      script.dataset.repoId = 'R_kgDOQ1M0gQ';
+      script.dataset.category = 'General';
+      script.dataset.categoryId = 'DIC_kwDOQ1M0gc4DB-w4';
+      script.dataset.mapping = 'pathname';
+      script.dataset.strict = '1';
+      script.dataset.reactionsEnabled = '1';
+      script.dataset.emitMetadata = '0';
+      script.dataset.inputPosition = 'top';
+      script.dataset.theme = getTheme();
+      script.dataset.lang = getLanguage();
+      script.dataset.loading = 'lazy';
+      host.appendChild(script);
+
+      const syncGiscus = () => {
+        const frame = document.querySelector('iframe.giscus-frame');
+        frame?.contentWindow?.postMessage({
+          giscus: {
+            setConfig: {
+              theme: getTheme(),
+              lang: getLanguage()
+            }
+          }
+        }, 'https://giscus.app');
+      };
+
+      new MutationObserver(syncGiscus).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme', 'data-lang']
+      });
+    })();
+  </script>
+</section>
