@@ -8,3 +8,6 @@ node_modules
 
 # Astro build output
 dist/
+
+# Temporary render and preview files
+tmp/
