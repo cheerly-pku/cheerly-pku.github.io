@@ -763,18 +763,22 @@ html[data-theme="dark"] .seeking-note {
 
 .friends-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(190px, 220px));
   gap: 18px;
+  justify-content: start;
 }
 
 .friend-card {
   position: relative;
   overflow: hidden;
+  min-height: 224px;
+  padding: 24px 16px 18px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text-primary);
   background: var(--surface);
   text-decoration: none;
+  text-align: center;
   transition: var(--transition);
 }
 
@@ -786,16 +790,22 @@ html[data-theme="dark"] .seeking-note {
 
 .friend-card > img {
   display: block;
-  width: 100%;
-  aspect-ratio: 1;
-  border-bottom: 1px solid var(--border);
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 17px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
   object-fit: cover;
+}
+
+.friend-card > img.friend-avatar-pixel {
+  image-rendering: pixelated;
 }
 
 .friend-card-body {
   position: relative;
-  min-height: 94px;
-  padding: 17px 46px 17px 18px;
+  min-height: 78px;
+  padding: 0 18px;
 }
 
 .friend-card h2 {
@@ -810,19 +820,20 @@ html[data-theme="dark"] .seeking-note {
   overflow-wrap: anywhere;
   color: var(--text-muted);
   font-size: 13px;
+  line-height: 1.45;
 }
 
 .friend-arrow {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  right: 0;
+  bottom: 0;
   color: var(--accent);
   font-size: 18px;
 }
 
 @media (max-width: 900px) {
   .friends-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
   }
 
   .academic-shell {
@@ -904,24 +915,7 @@ html[data-theme="dark"] .seeking-note {
   }
 
   .friends-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .friend-card {
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
-    align-items: stretch;
-  }
-
-  .friend-card > img {
-    width: 104px;
-    height: 104px;
-    border-right: 1px solid var(--border);
-    border-bottom: 0;
-  }
-
-  .friend-card-body {
-    min-height: 104px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .timeline-list article,
