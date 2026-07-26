@@ -6,15 +6,20 @@ I am interested in mathematics, mechanics, computer science, and intelligent sci
 
 [Homepage](https://cheerly-pku.github.io/) | [CV](https://cheerly-pku.github.io/cv/Jiaqi_Li_CV.pdf) | [Email](mailto:jq_li25@stu.pku.edu.cn)
 
-For the full profile, publications, projects, and links, please visit the [homepage](https://cheerly-pku.github.io/).
+For publications, projects, updates, and links, please visit the [homepage](https://cheerly-pku.github.io/).
 
 ## Repository Structure
 
-- `src/`: Astro pages, layouts, and shared styles.
-- `public/`: source assets copied into each Astro build.
-- `index.html`, `blog/`, `friends/`, `_astro/`: published GitHub Pages files.
-- `cv/`: published English and Chinese CVs.
-- `linear-algebra-practice/`, `parallel-practice/`: standalone course websites.
+- `src/pages/`: Astro page sources.
+- `src/components/`: shared page components, including GitHub-powered comments.
+- `src/layouts/`: shared document layout and client-side behavior.
+- `src/styles/`: shared responsive styling.
+- `public/images/`: profile, favicon, and friend images.
+- `public/cv/`: published English and Chinese CVs.
+- `public/linear-algebra-practice/`: standalone linear algebra course website.
+- `public/parallel-practice/`: standalone parallel programming course website.
+- `scripts/`: local maintenance utilities.
+- `.github/workflows/`: automatic GitHub Pages deployment.
 
 ## Local Development
 
@@ -25,4 +30,4 @@ npm run build
 npm run preview
 ```
 
-Astro writes generated output to `dist/`. That directory is intentionally ignored and should not be committed.
+Pushing to `main` runs the Pages workflow. Astro builds the site into the ignored `dist/` directory, and GitHub Actions deploys that artifact automatically. Generated HTML and hashed CSS should not be copied back into the repository root.

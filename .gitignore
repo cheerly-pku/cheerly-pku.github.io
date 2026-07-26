@@ -11,3 +11,4 @@ dist/
 
 # Temporary render and preview files
 tmp/
+.local-archive/

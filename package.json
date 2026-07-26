@@ -9,11 +9,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^5.0.0",
-    "katex": "^0.17.0",
-    "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "astro": "^5.0.0"
   }
 }
