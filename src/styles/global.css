@@ -744,7 +744,87 @@ html[data-theme="dark"] .seeking-note {
   margin-top: 22px;
 }
 
+.friends-page {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+  padding: 52px 28px 88px;
+}
+
+.friends-header {
+  margin-bottom: 26px;
+}
+
+.friends-header h1 {
+  color: var(--text-primary);
+  font-family: 'Lato', 'Noto Sans SC', sans-serif;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.friend-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  background: var(--surface);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.friend-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.friend-card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-bottom: 1px solid var(--border);
+  object-fit: cover;
+}
+
+.friend-card-body {
+  position: relative;
+  min-height: 94px;
+  padding: 17px 46px 17px 18px;
+}
+
+.friend-card h2 {
+  margin-bottom: 5px;
+  color: var(--text-primary);
+  font-family: 'Lato', 'Noto Sans SC', sans-serif;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.friend-card p {
+  overflow-wrap: anywhere;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.friend-arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: var(--accent);
+  font-size: 18px;
+}
+
 @media (max-width: 900px) {
+  .friends-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .academic-shell {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -819,6 +899,31 @@ html[data-theme="dark"] .seeking-note {
     padding-right: 20px;
   }
 
+  .friends-page {
+    padding: 38px 20px 68px;
+  }
+
+  .friends-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .friend-card {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .friend-card > img {
+    width: 104px;
+    height: 104px;
+    border-right: 1px solid var(--border);
+    border-bottom: 0;
+  }
+
+  .friend-card-body {
+    min-height: 104px;
+  }
+
   .timeline-list article,
   .note-list a {
     grid-template-columns: 1fr;
@@ -857,7 +962,8 @@ html[data-theme="dark"] .seeking-note {
 @media (max-width: 520px) {
   .nav-inner,
   .academic-shell,
-  .note-page {
+  .note-page,
+  .friends-page {
     padding-left: 16px;
     padding-right: 16px;
   }

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const friends = [
+  {
+    name: 'Rui Luo',
+    nameZh: '罗锐',
+    href: 'https://github.com/Leasier',
+    image: '/images/friends/rui-luo.jpg',
+    label: 'github.com/Leasier'
+  },
+  {
+    name: 'Chenxu Bai',
+    nameZh: '白晨旭',
+    href: 'https://a1henu.github.io/',
+    image: '/images/friends/chenxu-bai.jpg',
+    label: 'a1henu.github.io'
+  },
+  {
+    name: 'Gan Luo',
+    nameZh: '罗淦',
+    href: 'https://luoxiaogan.github.io/GanLuo.github.io/',
+    image: '/images/friends/gan-luo.png',
+    label: 'luoxiaogan.github.io'
+  }
+];
+---
+
+<BaseLayout title="Friends - Jiaqi Li" description="Friends and personal sites connected with Jiaqi Li.">
+  <nav class="nav" aria-label="Friends navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Back to homepage">Cheerly</a>
+      <ul class="nav-links">
+        <li><a href="/"><span class="lang-en">Home</span><span class="lang-zh">主页</span></a></li>
+        <li><a href="/blog/"><span class="lang-en">Blog</span><span class="lang-zh">动态</span></a></li>
+        <li><a href="/friends/"><span class="lang-en">Friends</span><span class="lang-zh">友链</span></a></li>
+        <li><a href="/cv/Jiaqi_Li_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+      <button class="lang-toggle" type="button" aria-label="Switch language">
+        <span class="lang-option-en">EN</span> / <span class="lang-option-zh">中</span>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="friends-page">
+    <header class="friends-header">
+      <p class="eyebrow"><span class="lang-en">Links</span><span class="lang-zh">友人主页</span></p>
+      <h1><span class="lang-en">Friends</span><span class="lang-zh">友链</span></h1>
+    </header>
+
+    <div class="friends-grid">
+      {friends.map((friend) => (
+        <a class="friend-card" href={friend.href} target="_blank" rel="noopener">
+          <img src={friend.image} alt="" width="512" height="512" loading="lazy" />
+          <div class="friend-card-body">
+            <h2><span class="lang-en">{friend.name}</span><span class="lang-zh">{friend.nameZh}</span></h2>
+            <p>{friend.label}</p>
+            <span class="friend-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
