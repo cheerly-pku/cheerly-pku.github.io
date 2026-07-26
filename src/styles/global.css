@@ -798,10 +798,6 @@ html[data-theme="dark"] .seeking-note {
   object-fit: cover;
 }
 
-.friend-card > img.friend-avatar-pixel {
-  image-rendering: pixelated;
-}
-
 .friend-card-body {
   position: relative;
   min-height: 78px;
