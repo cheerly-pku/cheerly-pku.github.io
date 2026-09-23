@@ -9,9 +9,7 @@ const publications = [
     venueZh: '《中等数学》2023 年第 5 期',
     year: '2023',
     href: 'https://kns.cnki.net/kcms2/article/abstract?v=hUjjRxyvaVPiKal2P0n5fx1nDbgRjvLFzFuqts95bbTjK6XXcp4zxsw_rfCHisqdYaqKvtTkpsiHWnHZ6lsVv_7MokaKWDaziajIIFecZZAxnypaRuanj5as2Gm8VyDUsP8gdXEPPHaBuwEG8bPU9YfXXUbVOe2H_GhcQsr4H3bR3sf47-4thw==&uniplatform=NZKPT&language=CHS',
-    pdf: 'https://kns.cnki.net/reader/flowpdf?invoice=RedtrUVS51uRwpBUfB2W4JYjPpRe24AvVKidEXjfVsUYCmeZVUHxlAf3gSiF9%2Fp1seYUkF2kdXyeSx7qUb%2BHnpPmvcN7HgE%2FMZhdtyvMr0aABZiLKmROn%2FN5bXVY029L%2B8Kc%2FgArX1NyPL%2FwUHIi%2BH18nS8AmrrCbNsbbah44Rc%3D&platform=NZKPT&sourcetype=nxgp&product=CJFN&filename=ZDSX202305002&tablename=cjfdlasn2024&type=JOURNAL&scope=trial&cflag=overlay&dflag=pdf&pages=&language=CHS&trial=&nonce=070B8735BD2D47EDB28A68C03CC5602A',
-    description: 'A CNKI-indexed article published in Middle School Mathematics.',
-    descriptionZh: '发表于《中等数学》，并由 CNKI 收录。'
+    pdf: 'https://kns.cnki.net/reader/flowpdf?invoice=RedtrUVS51uRwpBUfB2W4JYjPpRe24AvVKidEXjfVsUYCmeZVUHxlAf3gSiF9%2Fp1seYUkF2kdXyeSx7qUb%2BHnpPmvcN7HgE%2FMZhdtyvMr0aABZiLKmROn%2FN5bXVY029L%2B8Kc%2FgArX1NyPL%2FwUHIi%2BH18nS8AmrrCbNsbbah44Rc%3D&platform=NZKPT&sourcetype=nxgp&product=CJFN&filename=ZDSX202305002&tablename=cjfdlasn2024&type=JOURNAL&scope=trial&cflag=overlay&dflag=pdf&pages=&language=CHS&trial=&nonce=070B8735BD2D47EDB28A68C03CC5602A'
   }
 ];
 
@@ -395,7 +393,9 @@ const projects = [
               <p class="entry-meta">
                 <span class="lang-en">{item.venue}</span><span class="lang-zh">{item.venueZh}</span> · {item.year}
               </p>
-              <p><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
+              {(item.description || item.descriptionZh) && (
+                <p><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
+              )}
             </article>
           ))}
         </div>
