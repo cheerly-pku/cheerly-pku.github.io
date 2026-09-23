@@ -582,7 +582,7 @@ html[data-theme="dark"] .edu-card:hover {
   gap: 14px;
 }
 
-.award-card-venue {
+.award-card-meta {
   margin: 0;
   color: var(--text-muted);
   font-size: 13px;
@@ -663,7 +663,7 @@ html[data-theme="dark"] .edu-card:hover {
     width: 100%;
   }
 
-  .award-card-venue {
+  .award-card-meta {
     max-width: 100%;
   }
 
