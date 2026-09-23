@@ -376,17 +376,19 @@ const projects = [
                 <article class="award-card">
                   <div class="award-card-body">
                     <h4 class="award-card-title"><span class="lang-en">{award.title}</span><span class="lang-zh">{award.titleZh}</span></h4>
-                    <p class="award-card-venue"><span class="lang-en">{award.venue}</span><span class="lang-zh">{award.venueZh}</span></p>
                     {(award.note || award.noteZh) && (
                       <p class="award-card-note"><span class="lang-en">{award.note}</span><span class="lang-zh">{award.noteZh}</span></p>
                     )}
                   </div>
-                  {(award.link || award.pdf) && (
-                    <div class="award-card-links">
-                      {award.link && <a href={award.link} target="_blank" rel="noopener">Link</a>}
-                      {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">PDF</a>}
-                    </div>
-                  )}
+                  <div class="award-card-aside">
+                    <p class="award-card-venue"><span class="lang-en">{award.venue}</span><span class="lang-zh">{award.venueZh}</span></p>
+                    {(award.link || award.pdf) && (
+                      <div class="award-card-links">
+                        {award.link && <a href={award.link} target="_blank" rel="noopener">Link</a>}
+                        {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">PDF</a>}
+                      </div>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>

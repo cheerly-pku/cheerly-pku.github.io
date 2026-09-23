@@ -573,6 +573,24 @@ html[data-theme="dark"] .edu-card:hover {
   line-height: 1.5;
 }
 
+.award-card-aside {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 1;
+  min-width: 0;
+  gap: 14px;
+}
+
+.award-card-venue {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: right;
+  max-width: 340px;
+}
+
 .info-card-meta {
   color: var(--text-muted);
   font-size: 13px;
@@ -639,6 +657,14 @@ html[data-theme="dark"] .edu-card:hover {
   .info-card {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .award-card-aside {
+    width: 100%;
+  }
+
+  .award-card-venue {
+    max-width: 100%;
   }
 
   .award-card-links,
