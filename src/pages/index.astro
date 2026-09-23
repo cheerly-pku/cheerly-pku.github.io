@@ -21,6 +21,8 @@ const awards = [
     titleZh: '北京大学“五四奖学金”',
     venue: 'Peking University College of Engineering (School of Undergraduate Studies), 2025–2026 Academic Year',
     venueZh: '北京大学工学院（本科生学院），2025-2026 学年',
+    note: "Peking University's highest annual honor scholarship",
+    noteZh: '北京大学设立的年度最高荣誉奖学金',
     link: 'https://www.coe.pku.edu.cn/student/information/13857.html'
   },
   {
@@ -350,6 +352,8 @@ const projects = [
                 <span class="lang-en">{award.title}</span><span class="lang-zh">{award.titleZh}</span>
                 <span class="entry-inline-meta">
                   <span class="lang-en">, {award.venue}</span><span class="lang-zh">，{award.venueZh}</span>
+                  {award.note && <span class="lang-en">, {award.note}</span>}
+                  {award.noteZh && <span class="lang-zh">，{award.noteZh}</span>}
                   {award.link && <a href={award.link} target="_blank" rel="noopener">[Link]</a>}
                   {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">[PDF]</a>}
                 </span>
