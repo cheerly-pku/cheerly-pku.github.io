@@ -589,6 +589,7 @@ html[data-theme="dark"] .edu-card:hover {
   line-height: 1.45;
   text-align: right;
   max-width: 340px;
+  white-space: nowrap;
 }
 
 .info-card-meta {
