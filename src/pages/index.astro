@@ -58,7 +58,10 @@ const awards = [
 const studentService = [
   {
     title: 'Class Monitor, Class 9, 2025 Undergraduate Cohort, College of Engineering',
-    titleZh: '工学院 2025 级本科 9 班班长'
+    titleZh: '工学院 2025 级本科 9 班班长',
+    note: 'Class awarded "Outstanding Class Collective"',
+    noteZh: '获得优秀班集体',
+    link: 'https://www.coe.pku.edu.cn/student/information/13841.html'
   },
   {
     title: 'Vice Minister, Practice Department, Youth League Committee',
@@ -369,6 +372,9 @@ const projects = [
           {studentService.map((item) => (
             <li>
               <span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span>
+              {item.note && <span class="lang-en">, {item.note}</span>}
+              {item.noteZh && <span class="lang-zh">，{item.noteZh}</span>}
+              {item.link && <a href={item.link} target="_blank" rel="noopener">[Link]</a>}
             </li>
           ))}
         </ul>
