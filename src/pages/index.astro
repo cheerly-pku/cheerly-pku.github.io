@@ -13,43 +13,61 @@ const publications = [
   }
 ];
 
-const awards = [
+const awardGroups = [
   {
-    title: 'Peking University "May Fourth" Scholarship',
-    titleZh: '北京大学“五四奖学金”',
-    venue: 'Peking University College of Engineering (School of Undergraduate Studies), 2025–2026 Academic Year',
-    venueZh: '北京大学工学院（本科生学院），2025-2026 学年',
-    note: "Peking University's highest annual honor scholarship",
-    noteZh: '北京大学设立的年度最高荣誉奖学金',
-    link: 'https://www.coe.pku.edu.cn/student/information/13857.html'
+    title: 'University',
+    titleZh: '大学',
+    items: [
+      {
+        title: 'Peking University "May Fourth" Scholarship',
+        titleZh: '北京大学“五四奖学金”',
+        venue: 'Peking University College of Engineering (School of Undergraduate Studies), 2025–2026 Academic Year',
+        venueZh: '北京大学工学院（本科生学院），2025-2026 学年',
+        note: "Peking University's highest annual honor scholarship",
+        noteZh: '北京大学设立的年度最高荣誉奖学金',
+        link: 'https://www.coe.pku.edu.cn/student/information/13857.html'
+      },
+      {
+        title: 'Second Prize, Beijing Region',
+        titleZh: '北京市二等奖',
+        venue: '17th National College Students Mathematics Competition / 36th Beijing College Students Mathematics Competition',
+        venueZh: '第十七届全国大学生数学竞赛 / 第三十六届北京市大学生数学竞赛',
+        link: 'https://www.zizzs.com/gk/kaoyanzhuanqu/214474.html',
+        pdf: 'https://cdn.zizzs.com/zixunzhan/%E5%8C%97%E4%BA%AC%E8%B5%9B%E5%8C%BA%E7%AC%AC%E5%8D%81%E4%B8%83%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B%E8%8E%B7%E5%A5%96%E5%90%8D%E5%8D%951767162006298.pdf'
+      },
+      {
+        title: 'Admitted to Zhou Pei-Yuan College',
+        titleZh: '入选周培源书院',
+        venue: 'Peking University; 15 students admitted from the 362-member 2025 College of Engineering cohort',
+        venueZh: '北京大学；工学院 2025 级共 362 人，录取 15 人'
+      }
+    ]
   },
   {
-    title: 'First Prize, Hunan Province',
-    titleZh: '湖南省一等奖',
-    venue: '2023 Chinese Mathematical Olympiad Preliminary Round (Chinese High School Mathematics League)',
-    venueZh: '2023年全国高中数学联赛/2023年全国中学生数学奥林匹克竞赛（预赛）',
-    link: 'https://www.hnssxxh.org.cn/?p=549',
-    pdf: 'https://www.hnssxxh.org.cn/wp-content/uploads/2023/11/%E5%85%B3%E4%BA%8E2023%E5%B9%B4%E5%85%A8%E5%9B%BD%E4%B8%AD%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%EF%BC%88%E9%A2%84%E8%B5%9B%EF%BC%89%E6%B9%96%E5%8D%97%E8%B5%9B%E5%8C%BA%E6%9C%80%E7%BB%88%E8%8E%B7%E5%A5%96%E7%BB%93%E6%9E%9C%E7%9A%84%E5%85%AC%E5%B8%83%EF%BC%88%E4%B8%8A%E7%BD%91%EF%BC%89.pdf'
-  },
-  {
-    title: 'Second Prize, Beijing Region',
-    titleZh: '北京市二等奖',
-    venue: '17th National College Students Mathematics Competition / 36th Beijing College Students Mathematics Competition',
-    venueZh: '第十七届全国大学生数学竞赛 / 第三十六届北京市大学生数学竞赛',
-    link: 'https://www.zizzs.com/gk/kaoyanzhuanqu/214474.html',
-    pdf: 'https://cdn.zizzs.com/zixunzhan/%E5%8C%97%E4%BA%AC%E8%B5%9B%E5%8C%BA%E7%AC%AC%E5%8D%81%E4%B8%83%E5%B1%8A%E5%85%A8%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B%E8%8E%B7%E5%A5%96%E5%90%8D%E5%8D%951767162006298.pdf'
-  },
-  {
-    title: 'National Grand Prize, Senior 3 Group',
-    titleZh: '高三组全国特等奖',
-    venue: 'National High School Innovation Writing Competition',
-    venueZh: '全国中学生创新作文大赛'
-  },
-  {
-    title: 'First Prize, Provincial Level',
-    titleZh: '省一等奖',
-    venue: '"FLTRP Cup" Foreign Language Literacy Competition',
-    venueZh: '“外研社杯”外语素养大赛'
+    title: 'High School',
+    titleZh: '高中',
+    items: [
+      {
+        title: 'First Prize, Hunan Province',
+        titleZh: '湖南省一等奖',
+        venue: '2023 Chinese Mathematical Olympiad Preliminary Round (Chinese High School Mathematics League)',
+        venueZh: '2023年全国高中数学联赛/2023年全国中学生数学奥林匹克竞赛（预赛）',
+        link: 'https://www.hnssxxh.org.cn/?p=549',
+        pdf: 'https://www.hnssxxh.org.cn/wp-content/uploads/2023/11/%E5%85%B3%E4%BA%8E2023%E5%B9%B4%E5%85%A8%E5%9B%BD%E4%B8%AD%E5%AD%A6%E7%94%9F%E6%95%B0%E5%AD%A6%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%EF%BC%88%E9%A2%84%E8%B5%9B%EF%BC%89%E6%B9%96%E5%8D%97%E8%B5%9B%E5%8C%BA%E6%9C%80%E7%BB%88%E8%8E%B7%E5%A5%96%E7%BB%93%E6%9E%9C%E7%9A%84%E5%85%AC%E5%B8%83%EF%BC%88%E4%B8%8A%E7%BD%91%EF%BC%89.pdf'
+      },
+      {
+        title: 'National Grand Prize, Senior 3 Group',
+        titleZh: '高三组全国特等奖',
+        venue: 'National High School Innovation Writing Competition',
+        venueZh: '全国中学生创新作文大赛'
+      },
+      {
+        title: 'First Prize, Provincial Level',
+        titleZh: '省一等奖',
+        venue: '"FLTRP Cup" Foreign Language Literacy Competition',
+        venueZh: '“外研社杯”外语素养大赛'
+      }
+    ]
   }
 ];
 
@@ -348,22 +366,27 @@ const projects = [
 
       <section id="awards" class="academic-section">
         <h2><span class="section-emoji" aria-hidden="true">🏅</span><span class="lang-en">Awards</span><span class="lang-zh">获奖经历</span></h2>
-        <div class="entry-list">
-          {awards.map((award) => (
-            <article class="entry">
-              <h3>
-                <span class="lang-en">{award.title}</span><span class="lang-zh">{award.titleZh}</span>
-                <span class="entry-inline-meta">
-                  <span class="lang-en">, {award.venue}</span><span class="lang-zh">，{award.venueZh}</span>
-                  {award.note && <span class="lang-en">, {award.note}</span>}
-                  {award.noteZh && <span class="lang-zh">，{award.noteZh}</span>}
-                  {award.link && <a href={award.link} target="_blank" rel="noopener">[Link]</a>}
-                  {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">[PDF]</a>}
-                </span>
-              </h3>
-            </article>
-          ))}
-        </div>
+        {awardGroups.map((group) => (
+          <div class="award-group">
+            <h3 class="award-group-title"><span class="lang-en">{group.title}</span><span class="lang-zh">{group.titleZh}</span></h3>
+            <div class="entry-list">
+              {group.items.map((award) => (
+                <article class="entry">
+                  <h3>
+                    <span class="lang-en">{award.title}</span><span class="lang-zh">{award.titleZh}</span>
+                    <span class="entry-inline-meta">
+                      <span class="lang-en">, {award.venue}</span><span class="lang-zh">，{award.venueZh}</span>
+                      {award.note && <span class="lang-en">, {award.note}</span>}
+                      {award.noteZh && <span class="lang-zh">，{award.noteZh}</span>}
+                      {award.link && <a href={award.link} target="_blank" rel="noopener">[Link]</a>}
+                      {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">[PDF]</a>}
+                    </span>
+                  </h3>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
 
       <section id="service" class="academic-section">

@@ -467,6 +467,18 @@ html[data-theme="dark"] .seeking-note {
   color: var(--accent);
 }
 
+.award-group + .award-group {
+  margin-top: 24px;
+}
+
+.award-group-title {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
 .entry-inline-meta {
   color: var(--text-secondary);
   font-family: 'Lato', 'Noto Sans SC', sans-serif;
