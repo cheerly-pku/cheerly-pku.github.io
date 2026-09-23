@@ -295,7 +295,7 @@ const projects = [
         <div class="timeline-list">
           <article>
             <span class="item-date"><span class="lang-en">2025.09 - 2029.06</span><span class="lang-zh">2025.09 - 2029.06</span></span>
-            <div>
+            <div class="edu-card">
               <h3><span class="lang-en">Peking University</span><span class="lang-zh">北京大学</span></h3>
               <ul class="education-sublist lang-en">
                 <li>
@@ -335,7 +335,7 @@ const projects = [
           </article>
           <article>
             <span class="item-date"><span class="lang-en">2022.09 - 2025.06</span><span class="lang-zh">2022.09 - 2025.06</span></span>
-            <div>
+            <div class="edu-card">
               <h3>
                 <a href="https://cjzx.csedu.gov.cn/" target="_blank" rel="noopener">
                   <span class="lang-en">Changjun High School</span><span class="lang-zh">长郡中学</span>
@@ -396,37 +396,44 @@ const projects = [
 
       <section id="service" class="academic-section">
         <h2><span class="section-emoji" aria-hidden="true">🤝</span><span class="lang-en">Student Leadership & Service</span><span class="lang-zh">学生工作</span></h2>
-        <ul class="plain-list">
+        <div class="info-grid">
           {studentService.map((item) => (
-            <li>
-              <span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span>
-              {item.note && <span class="lang-en">, {item.note}</span>}
-              {item.noteZh && <span class="lang-zh">，{item.noteZh}</span>}
-              {item.link && <a href={item.link} target="_blank" rel="noopener">[Link]</a>}
-            </li>
+            <article class="info-card">
+              <div class="info-card-body">
+                <h3 class="info-card-title"><span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span></h3>
+                {(item.note || item.noteZh) && (
+                  <p class="info-card-note"><span class="lang-en">{item.note}</span><span class="lang-zh">{item.noteZh}</span></p>
+                )}
+              </div>
+              {item.link && (
+                <div class="info-card-links">
+                  <a href={item.link} target="_blank" rel="noopener">Link</a>
+                </div>
+              )}
+            </article>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section id="publications" class="academic-section">
         <h2><span class="section-emoji" aria-hidden="true">✍️</span><span class="lang-en">Publications & Writing</span><span class="lang-zh">发表与写作</span></h2>
-        <div class="entry-list">
+        <div class="info-grid">
           {publications.map((item) => (
-            <article class="entry">
-              <h3>
-                <span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span>
-                {(item.href || item.pdf) && (
-                  <span class="entry-inline-meta">
-                    {item.href && <a href={item.href} target="_blank" rel="noopener">[Link]</a>}
-                    {item.pdf && <a href={item.pdf} target="_blank" rel="noopener">[PDF]</a>}
-                  </span>
+            <article class="info-card">
+              <div class="info-card-body">
+                <h3 class="info-card-title"><span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span></h3>
+                <p class="info-card-meta">
+                  <span class="lang-en">{item.venue}</span><span class="lang-zh">{item.venueZh}</span> · {item.year}
+                </p>
+                {(item.description || item.descriptionZh) && (
+                  <p class="info-card-desc"><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
                 )}
-              </h3>
-              <p class="entry-meta">
-                <span class="lang-en">{item.venue}</span><span class="lang-zh">{item.venueZh}</span> · {item.year}
-              </p>
-              {(item.description || item.descriptionZh) && (
-                <p><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
+              </div>
+              {(item.href || item.pdf) && (
+                <div class="info-card-links">
+                  {item.href && <a href={item.href} target="_blank" rel="noopener">Link</a>}
+                  {item.pdf && <a href={item.pdf} target="_blank" rel="noopener">PDF</a>}
+                </div>
               )}
             </article>
           ))}
@@ -435,21 +442,21 @@ const projects = [
 
       <section id="projects" class="academic-section">
         <h2><span class="section-emoji" aria-hidden="true">🛠️</span><span class="lang-en">Selected Projects</span><span class="lang-zh">项目精选</span></h2>
-        <div class="entry-list">
+        <div class="info-grid">
           {projects.map((project) => (
-            <article class="entry">
-              <h3>
-                <span class="lang-en">{project.title}</span><span class="lang-zh">{project.titleZh}</span>
-                {project.href && (
-                  <span class="entry-inline-meta">
-                    <a href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noopener' : undefined}>[Link]</a>
-                  </span>
-                )}
-              </h3>
-              <p>
-                <span aria-hidden="true">▸ </span><strong>TL;DR:</strong>
-                <span class="lang-en"> {project.description}</span><span class="lang-zh"> {project.descriptionZh}</span>
-              </p>
+            <article class="info-card">
+              <div class="info-card-body">
+                <h3 class="info-card-title"><span class="lang-en">{project.title}</span><span class="lang-zh">{project.titleZh}</span></h3>
+                <p class="info-card-desc">
+                  <span aria-hidden="true">▸ </span><strong>TL;DR:</strong>
+                  <span class="lang-en"> {project.description}</span><span class="lang-zh"> {project.descriptionZh}</span>
+                </p>
+              </div>
+              {project.href && (
+                <div class="info-card-links">
+                  <a href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noopener' : undefined}>Link</a>
+                </div>
+              )}
             </article>
           ))}
         </div>
