@@ -368,20 +368,25 @@ const projects = [
         <h2><span class="section-emoji" aria-hidden="true">🏅</span><span class="lang-en">Awards</span><span class="lang-zh">获奖经历</span></h2>
         {awardGroups.map((group) => (
           <div class="award-group">
-            <h3 class="award-group-title"><span class="lang-en">{group.title}</span><span class="lang-zh">{group.titleZh}</span></h3>
-            <div class="entry-list">
+            <h3 class="award-group-title">
+              <span class="award-group-badge"><span class="lang-en">{group.title}</span><span class="lang-zh">{group.titleZh}</span></span>
+            </h3>
+            <div class="award-grid">
               {group.items.map((award) => (
-                <article class="entry">
-                  <h3>
-                    <span class="lang-en">{award.title}</span><span class="lang-zh">{award.titleZh}</span>
-                    <span class="entry-inline-meta">
-                      <span class="lang-en">, {award.venue}</span><span class="lang-zh">，{award.venueZh}</span>
-                      {award.note && <span class="lang-en">, {award.note}</span>}
-                      {award.noteZh && <span class="lang-zh">，{award.noteZh}</span>}
-                      {award.link && <a href={award.link} target="_blank" rel="noopener">[Link]</a>}
-                      {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">[PDF]</a>}
-                    </span>
-                  </h3>
+                <article class="award-card">
+                  <div class="award-card-body">
+                    <h4 class="award-card-title"><span class="lang-en">{award.title}</span><span class="lang-zh">{award.titleZh}</span></h4>
+                    <p class="award-card-venue"><span class="lang-en">{award.venue}</span><span class="lang-zh">{award.venueZh}</span></p>
+                    {(award.note || award.noteZh) && (
+                      <p class="award-card-note"><span class="lang-en">{award.note}</span><span class="lang-zh">{award.noteZh}</span></p>
+                    )}
+                  </div>
+                  {(award.link || award.pdf) && (
+                    <div class="award-card-links">
+                      {award.link && <a href={award.link} target="_blank" rel="noopener">Link</a>}
+                      {award.pdf && <a href={award.pdf} target="_blank" rel="noopener">PDF</a>}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
