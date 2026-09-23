@@ -334,14 +334,18 @@ const projects = [
 
       <section id="grades" class="academic-section">
         <h2><span class="section-emoji" aria-hidden="true">📊</span><span class="lang-en">Selected Grades</span><span class="lang-zh">部分成绩</span></h2>
-        <div class="entry-list">
-          {grades.map((grade) => (
-            <article class="entry">
-              <h3>
+        <div class="grade-bars">
+          {grades.map((grade, index) => (
+            <div class="grade-bar" style={`--score: ${grade.score}; --i: ${index}`}>
+              <span class="grade-bar-label">
                 <span class="lang-en">{grade.title}</span><span class="lang-zh">{grade.titleZh}</span>
-                <span class="entry-inline-meta">, {grade.score}</span>
-              </h3>
-            </article>
+              </span>
+              <span class="grade-bar-track">
+                <span class="grade-bar-fill">
+                  <span class="grade-bar-value">{grade.score}</span>
+                </span>
+              </span>
+            </div>
           ))}
         </div>
       </section>

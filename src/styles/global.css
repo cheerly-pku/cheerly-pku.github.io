@@ -494,6 +494,80 @@ html[data-theme="dark"] .seeking-note {
   color: color-mix(in srgb, var(--accent), var(--text-primary) 18%);
 }
 
+.grade-bars {
+  display: grid;
+  gap: 15px;
+}
+
+.grade-bar {
+  display: grid;
+  grid-template-columns: minmax(150px, 34%) 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.grade-bar-label {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.grade-bar-track {
+  position: relative;
+  display: block;
+  height: 24px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.grade-bar-fill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: calc(var(--score) * 1%);
+  padding-right: 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent), var(--bg) 32%),
+    var(--accent)
+  );
+}
+
+/* Animate only when JS is available; otherwise bars render at full length. */
+.js .grade-bar-fill {
+  width: 0;
+  transition: width 1.1s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.js .grade-bar.in-view .grade-bar-fill {
+  width: calc(var(--score) * 1%);
+}
+
+.grade-bar-value {
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .grade-bar-fill {
+    transition: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .grade-bar {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
 .more-link {
   margin-top: 14px;
   text-align: right;

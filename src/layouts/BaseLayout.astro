@@ -26,6 +26,7 @@ const {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.dataset.theme = storedTheme || (prefersDark ? 'dark' : 'light');
         document.documentElement.dataset.lang = localStorage.getItem('lang') || 'en';
+        document.documentElement.classList.add('js');
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -134,6 +135,19 @@ const {
 
         headings.forEach((heading) => headingObserver.observe(heading));
         if (headings[0]) setActive(headings[0].id);
+      }
+
+      const gradeBars = document.querySelectorAll('.grade-bar');
+      if (gradeBars.length) {
+        const gradeObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        gradeBars.forEach((bar) => gradeObserver.observe(bar));
       }
     </script>
   </body>
