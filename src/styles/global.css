@@ -426,6 +426,23 @@ html[data-theme="dark"] .seeking-note {
   white-space: nowrap;
 }
 
+.education-coursework {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.94em;
+  line-height: 1.45;
+}
+
+.education-coursework p {
+  margin: 0;
+}
+
+.education-coursework strong {
+  color: var(--text-primary);
+}
+
 .timeline-list,
 .entry-list {
   display: grid;

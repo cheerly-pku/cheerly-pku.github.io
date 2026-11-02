@@ -79,13 +79,19 @@ const studentService = [
   {
     title: 'Class Monitor, Class 9, 2025 Undergraduate Cohort, College of Engineering',
     titleZh: '工学院 2025 级本科 9 班班长',
-    note: 'Class awarded "Outstanding Class Collective"',
-    noteZh: '获得优秀班集体',
+    note: 'Class awarded "Advanced Class Collective", Peking University, 2025-2026 academic year',
+    noteZh: '获得2025–2026学年度北京大学先进班集体',
     link: 'https://www.coe.pku.edu.cn/student/information/13841.html'
   },
   {
     title: 'Vice Minister, Practice Department, Youth League Committee / Innovation and Entrepreneurship Committee Member, College of Engineering',
     titleZh: '团委实践部副部长 / 学院创新创业委员'
+  },
+  {
+    title: 'Member, Peking University Linux Club',
+    titleZh: '北京大学 Linux 俱乐部成员',
+    note: 'Participant in the club\'s infra seminar',
+    noteZh: '参与俱乐部 infra seminar'
   },
   {
     title: 'Sole selected member from the College of Engineering, Demonstration Training Program for Party Development Candidates',
@@ -137,9 +143,9 @@ const grades = [
 
 const projects = [
   {
-    title: 'ABACUS Pull Request #7580',
-    titleZh: 'ABACUS Pull Request #7580',
-    href: 'https://github.com/deepmodeling/abacus-develop/pull/7580',
+    title: 'ABACUS Pull Request #8042',
+    titleZh: 'ABACUS Pull Request #8042',
+    href: 'https://github.com/deepmodeling/abacus-develop/pull/8042',
     description: 'Proposed a PPCG iterative diagonalization solver for ABACUS, adding the ks_solver=ppcg path, unit tests, build integration, and user-facing documentation.',
     descriptionZh: '为 ABACUS 提出 PPCG 迭代对角化求解器，补充 ks_solver=ppcg 路径、单元测试、构建集成与用户文档。'
   },
@@ -213,18 +219,6 @@ const projects = [
             </svg>
             <span><span class="lang-en">Email</span><span class="lang-zh">邮箱</span></span>
           </a>
-          <a href="/cv/Jiaqi_Li_CV.pdf" target="_blank" rel="noopener">
-            <svg class="profile-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 2.8h8.5L20 8.3V21a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4.8a2 2 0 0 1 2-2Zm8 1.9V9h4.3L14 4.7ZM7 12h10v2H7v-2Zm0 4h10v2H7v-2Z" />
-            </svg>
-            <span>CV (EN)</span>
-          </a>
-          <a href="/cv/Jiaqi_Li_CV_zh.pdf" target="_blank" rel="noopener">
-            <svg class="profile-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 2.8h8.5L20 8.3V21a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4.8a2 2 0 0 1 2-2Zm8 1.9V9h4.3L14 4.7ZM7 12h10v2H7v-2Zm0 4h10v2H7v-2Z" />
-            </svg>
-            <span>CV (中)</span>
-          </a>
           <a href="/blog/">
             <svg class="profile-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 4h14a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2H9.8L5 21v-3.5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm1 4v1.7h12V8H6Zm0 4v1.7h8.5V12H6Z" />
@@ -296,16 +290,15 @@ const projects = [
         <h2><span class="section-emoji" aria-hidden="true">🎓</span><span class="lang-en">Education</span><span class="lang-zh">教育经历</span></h2>
         <div class="timeline-list">
           <article>
-            <span class="item-date"><span class="lang-en">2025.09 - 2029.06</span><span class="lang-zh">2025.09 - 2029.06</span></span>
+            <span class="item-date"><span class="lang-en">2025.09 - Now</span><span class="lang-zh">2025.09 - 至今</span></span>
             <div class="edu-card">
               <h3><a href="https://www.pku.edu.cn/" target="_blank" rel="noopener"><span class="lang-en">Peking University</span><span class="lang-zh">北京大学</span></a></h3>
               <ul class="education-sublist lang-en">
                 <li>
-                  <span class="education-subdate">2026.09 - 2027.06</span>
+                  <span class="education-subdate">2026.09 - Now</span>
                   <span>
                     Theoretical and Applied Mechanics (Engineering and Scientific Computing track),
-                    <a href="https://www.coe.pku.edu.cn/" target="_blank" rel="noopener">College of Engineering</a>
-                    & Zhou Pei-Yuan College.
+                    <a href="https://www.coe.pku.edu.cn/" target="_blank" rel="noopener">College of Engineering</a>.
                   </span>
                 </li>
                 <li>
@@ -318,11 +311,10 @@ const projects = [
               </ul>
               <ul class="education-sublist lang-zh">
                 <li>
-                  <span class="education-subdate">2026.09 - 2027.06</span>
+                  <span class="education-subdate">2026.09 - 至今</span>
                   <span>
                     理论与应用力学（工程与科学计算方向），
-                    <a href="https://www.coe.pku.edu.cn/" target="_blank" rel="noopener">工学院</a>
-                    & 周培源书院。
+                    <a href="https://www.coe.pku.edu.cn/" target="_blank" rel="noopener">工学院</a>。
                   </span>
                 </li>
                 <li>
@@ -333,6 +325,16 @@ const projects = [
                   </span>
                 </li>
               </ul>
+              <div class="education-coursework lang-en">
+                <p><strong>Mathematics &amp; Physics:</strong> Linear Algebra and Geometry (98); Mathematical Analysis (II) (92); Mathematical Analysis (I) (91); General Physics (I) (91)</p>
+                <p><strong>Computer Science:</strong> Introduction to Computing (B) (96); Data Structures and Algorithms (B) (94); Parallel Programming (91)</p>
+                <p><strong>Term GPA:</strong> 3.87, Fall 2025</p>
+              </div>
+              <div class="education-coursework lang-zh">
+                <p><strong>数理类课程：</strong>线性代数与几何（98）；数学分析（二）（92）；数学分析（一）（91）；普通物理（I）（91）</p>
+                <p><strong>计算机课程：</strong>计算概论（B）（96）；数据结构与算法（B）（94）；并行程序设计（91）</p>
+                <p><strong>学期 GPA：</strong>3.87，2025 年秋季学期</p>
+              </div>
             </div>
           </article>
           <article>
