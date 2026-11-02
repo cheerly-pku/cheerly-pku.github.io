@@ -429,28 +429,32 @@ const projects = [
       </section>
 
       <section id="publications" class="academic-section">
-        <h2><span class="section-emoji" aria-hidden="true">✍️</span><span class="lang-en">Publications & Writing</span><span class="lang-zh">发表与写作</span></h2>
-        <div class="info-grid">
-          {publications.map((item) => (
-            <article class="info-card">
-              <div class="info-card-body">
-                <h3 class="info-card-title"><span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span></h3>
-                <p class="info-card-meta">
-                  <span class="lang-en">{item.venue}</span><span class="lang-zh">{item.venueZh}</span> · {item.year}
-                </p>
-                {(item.description || item.descriptionZh) && (
-                  <p class="info-card-desc"><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
-                )}
-              </div>
-              {(item.href || item.pdf) && (
-                <div class="info-card-links">
-                  {item.href && <a href={item.href} target="_blank" rel="noopener">Link</a>}
-                  {item.pdf && <a href={item.pdf} target="_blank" rel="noopener">PDF</a>}
+        <details class="section-collapse">
+          <summary>
+            <h2><span class="section-emoji" aria-hidden="true">✍️</span><span class="lang-en">Publications & Writing</span><span class="lang-zh">发表与写作</span></h2>
+          </summary>
+          <div class="info-grid">
+            {publications.map((item) => (
+              <article class="info-card">
+                <div class="info-card-body">
+                  <h3 class="info-card-title"><span class="lang-en">{item.title}</span><span class="lang-zh">{item.titleZh}</span></h3>
+                  <p class="info-card-meta">
+                    <span class="lang-en">{item.venue}</span><span class="lang-zh">{item.venueZh}</span> · {item.year}
+                  </p>
+                  {(item.description || item.descriptionZh) && (
+                    <p class="info-card-desc"><span class="lang-en">{item.description}</span><span class="lang-zh">{item.descriptionZh}</span></p>
+                  )}
                 </div>
-              )}
-            </article>
-          ))}
-        </div>
+                {(item.href || item.pdf) && (
+                  <div class="info-card-links">
+                    {item.href && <a href={item.href} target="_blank" rel="noopener">Link</a>}
+                    {item.pdf && <a href={item.pdf} target="_blank" rel="noopener">PDF</a>}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </details>
       </section>
 
       <section id="projects" class="academic-section">

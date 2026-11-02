@@ -346,6 +346,33 @@ button:focus-visible {
   vertical-align: -0.05em;
 }
 
+details.section-collapse > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details.section-collapse > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.section-collapse > summary h2 {
+  display: inline;
+  margin-bottom: 0;
+}
+
+details.section-collapse > summary::after {
+  content: "▸";
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--text-muted);
+  font-size: 0.8em;
+  transition: transform 0.15s ease;
+}
+
+details.section-collapse[open] > summary::after {
+  transform: rotate(90deg);
+}
+
 .academic-section h3 {
   color: var(--text-primary);
   font-family: 'Lato', 'Noto Sans SC', sans-serif;
